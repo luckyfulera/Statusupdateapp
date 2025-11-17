@@ -1048,6 +1048,328 @@ export const MOCK_TEACHERS: Teacher[] = [
     role: UserRole.TEACHER,
     profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Lisa',
   },
+  {
+    teacherId: 'T015',
+    fullName: 'Dr. Shaurya Singh',
+    phone: '555-0115',
+    email: 'shaurya.singh@school.edu',
+    designation: 'Associate Professor of Biotechnology',
+    department: 'Biotechnology',
+    qualification: 'Ph.D. in Molecular Biology',
+    experience: 12,
+    joiningDate: '10/01/2012',
+    dateOfBirth: '15/07/1985',
+    subjects: ['Molecular Biology', 'Genetic Engineering', 'Bioinformatics', 'Cell Biology'],
+    education: [
+      {
+        degree: 'Ph.D. in Molecular Biology',
+        college: 'University of Delhi',
+        university: 'Delhi University',
+        year: '2012',
+      },
+      {
+        degree: 'M.Sc. in Biotechnology',
+        college: 'Indian Institute of Technology, Bombay',
+        university: 'IIT Bombay',
+        year: '2008',
+      },
+      {
+        degree: 'B.Sc. in Life Sciences',
+        college: 'Delhi University',
+        university: 'Delhi University',
+        year: '2006',
+      },
+    ],
+    bio: 'Dr. Shaurya Singh is a renowned biotechnology researcher with expertise in genetic engineering and molecular biology. He has published over 45 research papers and has been awarded multiple grants for his groundbreaking work in CRISPR technology and gene therapy.',
+    specializations: ['CRISPR Gene Editing', 'Gene Therapy', 'Molecular Cloning', 'Bioinformatics'],
+    officeHours: 'Mon-Wed-Fri: 2:00 PM - 4:00 PM',
+    achievements: [
+      {
+        title: 'National Science Award',
+        description: 'Recognized for outstanding contributions to biotechnology research',
+        year: '2023',
+        issuedBy: 'Ministry of Science and Technology'
+      },
+      {
+        title: 'Young Scientist Award',
+        description: 'Awarded for innovative research in gene therapy',
+        year: '2020',
+        issuedBy: 'Indian National Science Academy'
+      },
+      {
+        title: 'Best Research Paper Award',
+        description: 'For groundbreaking work on CRISPR applications',
+        year: '2022',
+        issuedBy: 'International Biotechnology Society'
+      }
+    ],
+    research: [
+      {
+        title: 'CRISPR-Based Therapeutic Approaches for Genetic Disorders',
+        journal: 'Nature Biotechnology',
+        year: '2023',
+        link: 'https://example.com/crispr-therapy',
+        authors: ['Shaurya Singh', 'Priya Sharma', 'Rajesh Kumar']
+      },
+      {
+        title: 'Novel Gene Editing Techniques for Cancer Treatment',
+        journal: 'Journal of Molecular Medicine',
+        year: '2022',
+        link: 'https://example.com/gene-cancer',
+        authors: ['Shaurya Singh', 'Anjali Verma']
+      },
+      {
+        title: 'Bioinformatics Analysis of Genetic Mutations in Rare Diseases',
+        journal: 'Bioinformatics Today',
+        year: '2021',
+        link: 'https://example.com/bioinformatics-mutations',
+        authors: ['Shaurya Singh', 'Vikram Patel', 'Neha Gupta']
+      },
+      {
+        title: 'Molecular Mechanisms of CRISPR-Cas9 Off-Target Effects',
+        journal: 'Genome Research',
+        year: '2020',
+        link: 'https://example.com/crispr-offtarget',
+        authors: ['Shaurya Singh']
+      }
+    ],
+    projects: [
+      {
+        title: 'Development of CRISPR-Based Gene Therapy for Sickle Cell Disease',
+        description: 'A collaborative project to develop and test CRISPR-based treatments for sickle cell disease with potential clinical applications',
+        year: '2021-2025',
+        role: 'Principal Investigator',
+        fundingAgency: 'Department of Biotechnology, India'
+      },
+      {
+        title: 'Bioinformatics Platform for Genomic Data Analysis',
+        description: 'Creating an advanced bioinformatics platform for analyzing large-scale genomic datasets',
+        year: '2020-2024',
+        role: 'Co-Investigator',
+        fundingAgency: 'National Institute of Biomedical Genomics'
+      },
+      {
+        title: 'Student Research Initiative in Molecular Biology',
+        description: 'Mentoring undergraduate and graduate students in cutting-edge molecular biology research',
+        year: '2019-Present',
+        role: 'Project Lead'
+      }
+    ],
+    staffRoom: 'B-305',
+    seatNo: '18',
+    floor: '3rd',
+    status: TeacherStatus.AVAILABLE,
+    role: UserRole.TEACHER,
+    profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Shaurya',
+  },
+  {
+    teacherId: 'T016',
+    fullName: 'Dr. Tannu Verma',
+    phone: '555-0116',
+    email: 'tannu.verma@school.edu',
+    designation: 'Assistant Professor of Environmental Science',
+    department: 'Environmental Science',
+    qualification: 'Ph.D. in Environmental Science',
+    experience: 8,
+    joiningDate: '15/06/2016',
+    dateOfBirth: '22/09/1990',
+    subjects: ['Environmental Ecology', 'Climate Change', 'Sustainable Development', 'Conservation Biology'],
+    education: [
+      {
+        degree: 'Ph.D. in Environmental Science',
+        college: 'University of British Columbia',
+        university: 'UBC',
+        year: '2016',
+      },
+      {
+        degree: 'M.Sc. in Environmental Science',
+        college: 'University of Delhi',
+        university: 'Delhi University',
+        year: '2012',
+      },
+      {
+        degree: 'B.Sc. in Environmental Science',
+        college: 'Delhi University',
+        university: 'Delhi University',
+        year: '2010',
+      },
+    ],
+    bio: 'Dr. Tannu Verma is a passionate environmental scientist dedicated to climate change research and sustainable development. She has conducted extensive fieldwork in various ecosystems and has published research on biodiversity conservation and climate resilience.',
+    specializations: ['Climate Change Mitigation', 'Biodiversity Conservation', 'Renewable Energy', 'Sustainable Development'],
+    officeHours: 'Tue-Thu: 11:00 AM - 1:00 PM',
+    achievements: [
+      {
+        title: 'Green Earth Award',
+        description: 'Recognized for outstanding contributions to environmental conservation',
+        year: '2023',
+        issuedBy: 'Global Environmental Foundation'
+      },
+      {
+        title: 'Young Environmental Scientist Award',
+        description: 'For innovative research in climate change adaptation',
+        year: '2021',
+        issuedBy: 'Environmental Science Society'
+      }
+    ],
+    research: [
+      {
+        title: 'Climate Resilience Strategies for Coastal Ecosystems',
+        journal: 'Environmental Research Letters',
+        year: '2023',
+        link: 'https://example.com/coastal-resilience',
+        authors: ['Tannu Verma', 'Arun Kumar', 'Priya Singh']
+      },
+      {
+        title: 'Biodiversity Patterns in Himalayan Forests Under Climate Change',
+        journal: 'Journal of Ecology and Conservation',
+        year: '2022',
+        link: 'https://example.com/himalayan-biodiversity',
+        authors: ['Tannu Verma', 'Rajesh Nair']
+      },
+      {
+        title: 'Renewable Energy Transition in Developing Nations',
+        journal: 'Sustainable Energy Reviews',
+        year: '2021',
+        link: 'https://example.com/renewable-transition',
+        authors: ['Tannu Verma', 'Vikram Singh', 'Neha Patel']
+      }
+    ],
+    projects: [
+      {
+        title: 'Himalayan Ecosystem Monitoring and Conservation Project',
+        description: 'Long-term monitoring of Himalayan ecosystems to assess climate change impacts and develop conservation strategies',
+        year: '2018-2026',
+        role: 'Principal Investigator',
+        fundingAgency: 'Ministry of Environment, Forest and Climate Change'
+      },
+      {
+        title: 'Community-Based Climate Adaptation Program',
+        description: 'Implementing climate adaptation strategies with local communities in vulnerable regions',
+        year: '2020-2024',
+        role: 'Co-Investigator'
+      }
+    ],
+    staffRoom: 'C-210',
+    seatNo: '11',
+    floor: '2nd',
+    status: TeacherStatus.AVAILABLE,
+    role: UserRole.TEACHER,
+    profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Tannu',
+  },
+  {
+    teacherId: 'T017',
+    fullName: 'Prof. Kamal Mehta',
+    phone: '555-0117',
+    email: 'kamal.mehta@school.edu',
+    designation: 'Professor of Materials Science and Engineering',
+    department: 'Materials Science',
+    qualification: 'Ph.D. in Materials Science',
+    experience: 16,
+    joiningDate: '20/08/2008',
+    dateOfBirth: '08/03/1982',
+    subjects: ['Materials Science', 'Nanotechnology', 'Polymer Science', 'Materials Characterization'],
+    education: [
+      {
+        degree: 'Ph.D. in Materials Science and Engineering',
+        college: 'Indian Institute of Technology, Madras',
+        university: 'IIT Madras',
+        year: '2008',
+      },
+      {
+        degree: 'M.Tech in Materials Science',
+        college: 'Indian Institute of Technology, Delhi',
+        university: 'IIT Delhi',
+        year: '2004',
+      },
+      {
+        degree: 'B.Tech in Metallurgical Engineering',
+        college: 'National Institute of Technology, Rourkela',
+        university: 'NIT Rourkela',
+        year: '2002',
+      },
+    ],
+    bio: 'Professor Kamal Mehta is a leading expert in nanotechnology and advanced materials. He has developed novel nanomaterials with applications in electronics, energy storage, and biomedical devices. His research has resulted in multiple patents and collaborations with international institutions.',
+    specializations: ['Nanotechnology', 'Graphene and 2D Materials', 'Polymer Nanocomposites', 'Materials Characterization'],
+    officeHours: 'Mon-Fri: 1:00 PM - 3:00 PM',
+    achievements: [
+      {
+        title: 'National Materials Science Award',
+        description: 'Lifetime achievement award for contributions to materials science and nanotechnology',
+        year: '2023',
+        issuedBy: 'Indian National Academy of Engineering'
+      },
+      {
+        title: 'Innovation in Materials Award',
+        description: 'For development of novel nanomaterials with commercial applications',
+        year: '2022',
+        issuedBy: 'Materials Research Society'
+      },
+      {
+        title: 'International Patent Award',
+        description: 'Multiple patents in nanotechnology and advanced materials',
+        year: '2021',
+        issuedBy: 'World Intellectual Property Organization'
+      }
+    ],
+    research: [
+      {
+        title: 'Graphene-Based Nanocomposites for High-Performance Electronics',
+        journal: 'Advanced Materials',
+        year: '2023',
+        link: 'https://example.com/graphene-electronics',
+        authors: ['Kamal Mehta', 'Arjun Singh', 'Meera Sharma']
+      },
+      {
+        title: 'Development of Biodegradable Polymer Nanocomposites',
+        journal: 'Polymer Science and Engineering',
+        year: '2022',
+        link: 'https://example.com/biodegradable-polymers',
+        authors: ['Kamal Mehta', 'Sanjay Kumar', 'Priya Nair']
+      },
+      {
+        title: 'Nanoparticles for Drug Delivery Applications',
+        journal: 'Nanotechnology Today',
+        year: '2021',
+        link: 'https://example.com/nanoparticles-drug',
+        authors: ['Kamal Mehta', 'Vikram Patel', 'Anjali Gupta']
+      },
+      {
+        title: 'Advanced Characterization Techniques for Nanomaterials',
+        journal: 'Journal of Materials Characterization',
+        year: '2020',
+        link: 'https://example.com/characterization-techniques',
+        authors: ['Kamal Mehta']
+      }
+    ],
+    projects: [
+      {
+        title: 'Development of Graphene-Based Energy Storage Devices',
+        description: 'Creating next-generation batteries and supercapacitors using graphene and other 2D materials',
+        year: '2020-2025',
+        role: 'Principal Investigator',
+        fundingAgency: 'Department of Science and Technology'
+      },
+      {
+        title: 'Nanomedical Devices for Targeted Drug Delivery',
+        description: 'Developing nanoparticle-based systems for precise drug delivery in cancer therapy',
+        year: '2019-2024',
+        role: 'Co-Investigator',
+        fundingAgency: 'Indian Council of Medical Research'
+      },
+      {
+        title: 'Sustainable Nanomaterials for Environmental Applications',
+        description: 'Research on eco-friendly nanomaterials for water purification and pollution control',
+        year: '2021-Present',
+        role: 'Project Lead'
+      }
+    ],
+    staffRoom: 'A-405',
+    seatNo: '22',
+    floor: '4th',
+    status: TeacherStatus.IN_CLASS,
+    role: UserRole.TEACHER,
+    profileImage: 'https://api.dicebear.com/7.x/avataaars/svg?seed=Kamal',
+  },
 ];
 
 export const MOCK_STUDENTS: Student[] = [

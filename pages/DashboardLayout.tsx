@@ -19,24 +19,47 @@ type PageType = 'home' | 'profile' | 'timetable' | 'holidays' | 'settings';
 interface DashboardLayoutProps {
   user: Student | Teacher;
   teachers?: Teacher[];
+  students?: Student[];
   onLogout: () => void;
   onProfileUpdate: (updatedUser: Student | Teacher) => void;
-  onStatusUpdate?: (teacherId: string, newStatus: any) => void;
+  onStatusUpdate?: (teacherId: string, newStatus: TeacherStatus) => void;
   onTimetableUpdate?: (teacherId: string, timetable: TimetableData) => void;
 }
 
 const DashboardLayout: React.FC<DashboardLayoutProps> = ({
   user,
-  teachers,
+  teachers = [],
   onLogout,
   onProfileUpdate,
-  onStatusUpdate,
-  onTimetableUpdate,
+  onStatusUpdate = () => {},
+  onTimetableUpdate = () => {},
 }) => {
+  // Show loading state if user data is not available yet
+  if (!user) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gray-50">
+        <div className="text-center">
+          <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-blue-500 mx-auto"></div>
+          <p className="mt-4 text-gray-600">Loading user data...</p>
+        </div>
+      </div>
+    );
+  }
   const [currentPage, setCurrentPage] = useState<PageType>('home');
   const [selectedTeacher, setSelectedTeacher] = useState<Teacher | null>(null);
   const [searchTerm, setSearchTerm] = useState('');
   const isStudent = user.role === UserRole.STUDENT;
+
+  // Filter teachers based on search term
+  const filteredTeachers = useMemo(() => {
+    if (!searchTerm.trim()) return [];
+    return teachers.filter(teacher =>
+      teacher.fullName.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      teacher.designation.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      teacher.department?.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      teacher.teacherId.toLowerCase().includes(searchTerm.toLowerCase())
+    );
+  }, [teachers, searchTerm]);
 
   const navItems = isStudent
     ? [
@@ -104,6 +127,65 @@ const DashboardLayout: React.FC<DashboardLayoutProps> = ({
                   </div>
                 </div>
               </Card>
+
+              {/* Find Teachers Section */}
+              <Card className="bg-gradient-to-r from-blue-50 to-indigo-50">
+                <h3 className="text-2xl font-bold mb-4">Find a Teacher</h3>
+                <div className="relative mb-4">
+                  <input
+                    type="text"
+                    placeholder="Search by name, designation, department, or ID..."
+                    value={searchTerm}
+                    onChange={e => setSearchTerm(e.target.value)}
+                    className="w-full p-3 pl-10 border border-gray-300 rounded-lg shadow-sm focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
+                  />
+                  <svg className="w-5 h-5 text-gray-400 absolute top-1/2 left-3 transform -translate-y-1/2" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                  </svg>
+                </div>
+
+                {/* Search Results */}
+                {searchTerm.trim() && (
+                  <div className="space-y-3">
+                    {filteredTeachers.length > 0 ? (
+                      filteredTeachers.map(teacher => (
+                        <div
+                          key={teacher.teacherId}
+                          onClick={() => {
+                            setSelectedTeacher(teacher);
+                            addToSearchHistory(teacher);
+                          }}
+                          className="flex items-center justify-between p-3 bg-white rounded-lg hover:shadow-md transition-all cursor-pointer border border-gray-200"
+                        >
+                          <div className="flex items-center gap-3">
+                            <img
+                              src={teacher.profileImage || `https://api.dicebear.com/7.x/avataaars/svg?seed=${teacher.fullName}`}
+                              alt={teacher.fullName}
+                              className="w-10 h-10 rounded-full"
+                            />
+                            <div>
+                              <p className="font-semibold text-gray-900">{teacher.fullName}</p>
+                              <p className="text-xs text-gray-600">{teacher.designation}</p>
+                            </div>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className={`w-2 h-2 rounded-full ${
+                              teacher.status === 'Available in Staff Room' ? 'bg-green-500' :
+                              teacher.status === 'In a Class' ? 'bg-blue-500' :
+                              teacher.status === 'On a Break' ? 'bg-yellow-500' :
+                              'bg-red-500'
+                            }`}></span>
+                            <span className="text-xs text-gray-500">{teacher.status}</span>
+                          </div>
+                        </div>
+                      ))
+                    ) : (
+                      <p className="text-center text-gray-500 py-4">No teachers found matching your search.</p>
+                    )}
+                  </div>
+                )}
+              </Card>
+
               <SearchHistory onTeacherSelect={(teacher) => {
                 setSelectedTeacher(teacher);
                 addToSearchHistory(teacher);

@@ -3,7 +3,7 @@ import Card from './Card';
 import { UserRole } from '../types';
 
 interface TimetableProps {
-  userRole: UserRole;
+  userRole: UserRole | string; // Accept both enum and string for flexibility
 }
 
 interface ClassSlot {
@@ -111,7 +111,14 @@ const TEACHER_TIMETABLE: { [key: string]: ClassSlot[] } = {
 };
 
 const Timetable: React.FC<TimetableProps> = ({ userRole }) => {
-  const timetable = userRole === UserRole.STUDENT ? STUDENT_TIMETABLE : TEACHER_TIMETABLE;
+  // Safely determine if the user is a student
+  const isStudent = (() => {
+    if (typeof userRole === 'string') {
+      return userRole.toLowerCase() === UserRole.STUDENT.toLowerCase();
+    }
+    return userRole === UserRole.STUDENT;
+  })();
+  const timetable = isStudent ? STUDENT_TIMETABLE : TEACHER_TIMETABLE;
   const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
 
   const getSlotColor = (subject: string) => {

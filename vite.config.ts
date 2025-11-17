@@ -12,7 +12,7 @@ export default defineConfig({
 
   // Development server configuration
   server: {
-    port: 3000,        // Development server port
+    port: 3001,        // Development server port
     host: '0.0.0.0',   // Allow external connections (useful for testing)
   },
 
